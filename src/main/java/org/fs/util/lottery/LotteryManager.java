@@ -34,7 +34,7 @@ public class LotteryManager {
         int range = random.nextInt(TOTAL_RANGE);
 
         for (LotteryItem item : lotteryContext.getItems()) {
-            if (range >= item.getRangeStart() && range <= item.getRangeEnd()) {
+            if (range >= item.getRangeStart() && range < item.getRangeEnd()) {
                 lotteryResult.setSuccess(true);
                 lotteryResult.setItemCode(item.getCode());
                 break;

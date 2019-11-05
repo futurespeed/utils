@@ -3,7 +3,7 @@ package org.fs.util.lottery;
 public class LotteryItem {
     private String code;
     /**
-     * 0.00~100.00
+     * 0.0000~1.0000
      */
     private Double probability;
     private int rangeStart;

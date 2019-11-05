@@ -9,7 +9,7 @@ public class LotteryManager {
 
     private static final int TOTAL_RANGE = 10000;
 
-    private static final int PROBABILITY_SCALE = 100;
+    private static final int PROBABILITY_SCALE = 10000;
 
     public LotteryManager(LotteryContext lotteryContext) {
         this.lotteryContext = lotteryContext;

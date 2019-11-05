@@ -1,7 +1,4 @@
-import org.fs.util.lottery.LotteryContext;
-import org.fs.util.lottery.LotteryItem;
-import org.fs.util.lottery.LotteryManager;
-import org.fs.util.lottery.LotteryResult;
+package org.fs.util.lottery;
 
 import java.util.ArrayList;
 import java.util.HashMap;

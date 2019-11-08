@@ -57,11 +57,11 @@ public class LotteryTest {
         List<LotteryItem> items = new ArrayList<>();
         LotteryItem item1 = new LotteryItem();
         item1.setCode("gift1");
-        item1.setProbability(3.00);
+        item1.setProbability(0.0300);
         items.add(item1);
         LotteryItem item2 = new LotteryItem();
         item2.setCode("gift2");
-        item2.setProbability(97.00);
+        item2.setProbability(0.9700);
         items.add(item2);
         return items;
     }
@@ -129,15 +129,15 @@ public class LotteryTest {
         List<LotteryItem> items = new ArrayList<>();
         LotteryItem item1 = new LotteryItem();
         item1.setCode("gift1");
-        item1.setProbability(30.00);
+        item1.setProbability(0.3000);
         items.add(item1);
         LotteryItem item2 = new LotteryItem();
         item2.setCode("gift2");
-        item2.setProbability(20.01);
+        item2.setProbability(0.2001);
         items.add(item2);
         LotteryItem item3 = new LotteryItem();
         item3.setCode("gift3");
-        item3.setProbability(49.99);
+        item3.setProbability(0.4999);
         items.add(item3);
 
         lotteryContext.setItems(items);

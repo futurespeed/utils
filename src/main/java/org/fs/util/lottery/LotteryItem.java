@@ -3,11 +3,11 @@ package org.fs.util.lottery;
 public class LotteryItem {
     private String code;
     /**
-     * 0.0000~1.0000
+     * 0~1
      */
     private Double probability;
-    private int rangeStart;
-    private int rangeEnd;
+    private long rangeStart;
+    private long rangeEnd;
 
     public String getCode() {
         return code;
@@ -25,19 +25,19 @@ public class LotteryItem {
         this.probability = probability;
     }
 
-    public int getRangeStart() {
+    public long getRangeStart() {
         return rangeStart;
     }
 
-    public void setRangeStart(int rangeStart) {
+    public void setRangeStart(long rangeStart) {
         this.rangeStart = rangeStart;
     }
 
-    public int getRangeEnd() {
+    public long getRangeEnd() {
         return rangeEnd;
     }
 
-    public void setRangeEnd(int rangeEnd) {
+    public void setRangeEnd(long rangeEnd) {
         this.rangeEnd = rangeEnd;
     }
 }

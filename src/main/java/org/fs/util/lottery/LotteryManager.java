@@ -7,21 +7,17 @@ public class LotteryManager {
 
     private LotteryContext lotteryContext;
 
-    private static final int TOTAL_RANGE = 10000;
-
-    private static final int PROBABILITY_SCALE = 10000;
-
     public LotteryManager(LotteryContext lotteryContext) {
         this.lotteryContext = lotteryContext;
         init();
     }
 
     protected void init() {
-        int range = 0;
+        long range = 0;
         for (LotteryItem item : lotteryContext.getItems()) {
             item.setRangeStart(range);
-            range = range + (int) (item.getProbability() * PROBABILITY_SCALE);
-            if (range > TOTAL_RANGE) {
+            range = range + (long) (item.getProbability() * lotteryContext.getTotalRange());
+            if (range > lotteryContext.getTotalRange()) {
                 throw new RuntimeException("Over Range");
             }
             item.setRangeEnd(range);
@@ -30,8 +26,8 @@ public class LotteryManager {
 
     public LotteryResult lottery() {
         LotteryResult lotteryResult = new LotteryResult();
-        Random random = ThreadLocalRandom.current();
-        int range = random.nextInt(TOTAL_RANGE);
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        long range = random.nextLong(lotteryContext.getTotalRange());
 
         for (LotteryItem item : lotteryContext.getItems()) {
             if (range >= item.getRangeStart() && range < item.getRangeEnd()) {
